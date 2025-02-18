@@ -25,8 +25,18 @@
             }
         }
 
-        function getHumanChoice() {
+        function getHumanChoice(i) {
+            let humanPlay = +prompt("What move will you play? 0 = Rock, 1 = Paper, 2 = Scissors")
 
+            if (humanPlay === 0) {
+                console.log("Rock")
+                return
+            } else if (humanPlay === 1) {
+                console.log("Paper")
+                return
+            } else {
+                console.log("Scissors")
+            }
         }
     </script>
 </body>
