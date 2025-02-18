@@ -11,7 +11,23 @@
 
 
     <script>
-        console.log("Hello World")
+        function getComputerChoice(n) {
+            let random = Math.floor(Math.random() * 3)
+
+            if (random === 0) {
+                console.log("Rock");
+                return
+            } else if (random === 1) {
+                console.log("Paper")
+                return
+            } else {
+                console.log("Scissors")
+            }
+        }
+
+        function getHumanChoice() {
+
+        }
     </script>
 </body>
 
