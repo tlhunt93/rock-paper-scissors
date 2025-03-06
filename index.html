@@ -11,33 +11,87 @@
 
 
     <script>
-        function getComputerChoice(n) {
+
+        let humanScore = 0
+        let computerScore = 0
+
+        function getComputerChoice() {
             let random = Math.floor(Math.random() * 3)
 
             if (random === 0) {
-                console.log("Rock");
+                console.log("Computer chose: Rock");
                 return
             } else if (random === 1) {
-                console.log("Paper")
+                console.log("Computer chose: Paper")
                 return
             } else {
-                console.log("Scissors")
+                console.log("Computer chose: Scissors")
             }
         }
 
-        function getHumanChoice(i) {
+        function getHumanChoice() {
             let humanPlay = +prompt("What move will you play? 0 = Rock, 1 = Paper, 2 = Scissors")
 
             if (humanPlay === 0) {
-                console.log("Rock")
+                console.log("You chose: Rock")
                 return
             } else if (humanPlay === 1) {
-                console.log("Paper")
+                console.log("You chose: Paper")
                 return
             } else {
-                console.log("Scissors")
+                console.log("You chose: Scissors")
             }
         }
+
+        function playRound(ComputerChoice, HumanChoice) {
+
+            if (ComputerChoice === 0 && HumanChoice === 0 || ComputerChoice === 1 && HumanChoice === 1 || ComputerChoice === 2 && HumanChoice === 2) {
+                console.log("It's a tie!")
+                return
+            } else if (ComputerChoice === 2 && HumanChoice === 0) {
+                ++humanScore
+                console.log("You win!")
+                console.log(`Your score is: ${humanScore}`)
+                console.log(`Computer score is: ${computerScore}`)
+                return
+            } else if (ComputerChoice === 0 && HumanChoice === 1) {
+                ++humanScore
+                console.log("You win!")
+                console.log(`Your score is: ${humanScore}`)
+                console.log(`Computer score is: ${computerScore}`)
+                return
+            } else if (ComputerChoice === 1 && HumanChoice === 2) {
+                ++humanScore
+                console.log("You win!")
+                console.log(`Your score is: ${humanScore}`)
+                console.log(`Computer score is: ${computerScore}`)
+                return
+            } else if (ComputerChoice === 1 && HumanChoice === 0) {
+                ++computerScore
+                console.log("Computer win...")
+                console.log(`Your score is: ${humanScore}`)
+                console.log(`Computer score is: ${computerScore}`)
+                return
+            } else if (ComputerChoice === 2 && HumanChoice === 1) {
+                ++computerScore
+                console.log("Computer win...")
+                console.log(`Your score is: ${humanScore}`)
+                console.log(`Computer score is: ${computerScore}`)
+                return
+            } else if (ComputerChoice === 0 && HumanChoice === 2) {
+                ++computerScore
+                console.log("Computer win...")
+                console.log(`Your score is: ${humanScore}`)
+                console.log(`Computer score is: ${computerScore}`)
+                return
+            }
+        }
+
+
+
+        const humanSelection = getHumanChoice()
+        const computerSelection = getComputerChoice()
+
     </script>
 </body>
 
